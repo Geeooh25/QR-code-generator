@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>QR Code Generator | Free & Instant</title>
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <!-- html2canvas for download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1><i class="fas fa-qrcode"></i> QR Code Generator</h1>
+    <div class="sub">Create custom QR codes for URLs, text, or any data</div>
+
+    <div class="input-group">
+        <label><i class="fas fa-pencil-alt"></i> Content</label>
+        <textarea id="qrText" rows="3" placeholder="Enter URL, text, contact info, WiFi credentials...">https://startup-suite.example.com</textarea>
+    </div>
+
+    <div class="input-group">
+        <label><i class="fas fa-chart-line"></i> Error Correction</label>
+        <select id="errorLevel">
+            <option value="L">L - Low (7% recovery)</option>
+            <option value="M" selected>M - Medium (15% recovery)</option>
+            <option value="Q">Q - Quartile (25% recovery)</option>
+            <option value="H">H - High (30% recovery)</option>
+        </select>
+    </div>
+
+    <div class="size-options">
+        <button class="size-btn" data-size="100">Small</button>
+        <button class="size-btn active" data-size="180">Medium</button>
+        <button class="size-btn" data-size="250">Large</button>
+        <button class="size-btn" data-size="350">XL</button>
+    </div>
+
+    <div class="qr-preview">
+        <div id="qrcode"></div>
+    </div>
+
+    <div class="btn-group">
+        <button id="generateBtn" class="btn btn-primary"><i class="fas fa-sync-alt"></i> Generate</button>
+        <button id="downloadBtn" class="btn btn-secondary"><i class="fas fa-download"></i> Download PNG</button>
+    </div>
+</div>
+<div id="toast" class="toast">✅ QR Code generated!</div>
+<script src="app.js"></script>
+</body>
+</html>
